@@ -1,0 +1,55 @@
+<!doctype html>
+<title>Welcome to Taco Builder!</title>
+
+<h1 style = "text-align:center">Welcome to Taco Builder!</h1>
+
+<ul>
+    <header style = "font-weight:bold">Choose your shell!</header>
+    {% for shell in shells %}
+        <li>{{ shell }}<input type="submit" name="button" value="Add me!" id = "shell" onClick = "myFunction(this.id)"/></li>
+    {% endfor %}
+
+    <header style = "font-weight:bold"><br />Choose your base layer!</header>
+    {% for base in baseLayers %}
+        <li>{{ base }}<input type="submit" name="button" value="Add me!" id = "base" onClick = "myFunction(this.id)"/></li>
+    {% endfor %}
+
+    <header style = "font-weight:bold"><br />Choose your mixin!</header>
+    {% for mixin in mixins %}
+        <li>{{ mixin }}<input type="submit" name="button" value="Add me!" id = "mixin" onClick = "myFunction(this.id)"/></li>
+    {% endfor %}
+
+    <header style = "font-weight:bold"><br />Choose your seasoning!</header>
+    {% for seasoning in seasonings %}
+        <li>{{ seasoning }}<input type="submit" name="button" value="Add me!" id = "seasoning" onClick = "myFunction(this.id)"/></li>
+    {% endfor %}
+
+    <header style = "font-weight:bold"><br />Choose your condiment!</header>
+    {% for condiment in condiments %}
+        <li>{{ condiment }}<input type="submit" name="button" value="Add me!" id = "condiment" onClick = "myFunction(this.id)"/></li>
+    {% endfor %}
+
+</ul>
+
+
+<button id="btn">Result</button>
+<p id="text"></p>
+
+<script>
+    var tacos = [];
+    var i = 0;
+
+    document.getElementById("btn").onclick = function() {
+        if( i < tacos.length) {
+            x += [i++] + "<br>";
+        }
+        document.getElementById("text").innerHTML = x;
+    }
+
+    //document.getElementById("performFunc").addEventListener("click", function(){myFunction()};
+    //<header><input type="submit" name="button" value="Make your taco!" onClick="printList('tacos')"/></header>
+    function myFunction(input){
+        tacos.append(input);
+        document.getElementById("text").innerHTML = input;
+    }
+</script>
